@@ -76,9 +76,9 @@ DEFAULT_SYSTEM_PROMPT = (
     "Avoid sounding like a lecture or essay."
 )
 
-# Shokz customer support prompt
-SHOKZ_SUPPORT_PROMPT = (
-    "You are a friendly and knowledgeable Shokz customer support agent. "
+# Bone conduction headphone customer support prompt
+SUPPORT_PROMPT = (
+    "You are a friendly and knowledgeable customer support agent for bone conduction headphones. "
     "You help customers with bone conduction headphones — product questions, "
     "troubleshooting, and recommendations. "
     "Guidelines: "
@@ -333,18 +333,18 @@ async def main():
                         help="Voice ID (default: tiffany)")
     parser.add_argument("--region", default="us-east-1",
                         choices=["us-east-1", "us-west-2", "eu-north-1", "ap-northeast-1"])
-    parser.add_argument("--shokz", action="store_true",
-                        help="Use Shokz customer support prompt")
+    parser.add_argument("--support", action="store_true",
+                        help="Use bone conduction headphone customer support prompt")
     args = parser.parse_args()
 
     ensure_env_credentials()
-    system_prompt = SHOKZ_SUPPORT_PROMPT if args.shokz else DEFAULT_SYSTEM_PROMPT
+    system_prompt = SUPPORT_PROMPT if args.support else DEFAULT_SYSTEM_PROMPT
 
     print("=" * 60)
     print("Amazon Nova 2 Sonic — Real-time Conversation")
     print(f"Voice: {args.voice} | Region: {args.region}")
-    if args.shokz:
-        print("Mode: Shokz Customer Support")
+    if args.support:
+        print("Mode: Customer Support")
     print("=" * 60)
 
     client = NovaSonicConversation(

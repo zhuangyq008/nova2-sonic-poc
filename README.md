@@ -1,6 +1,6 @@
 # Amazon Nova 2 Sonic POC
 
-韶音 × AWS — Nova 2 Sonic 语音对话模型测试项目
+Amazon Nova 2 Sonic 语音对话模型 POC 测试项目
 
 ## 项目结构
 

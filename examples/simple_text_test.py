@@ -68,9 +68,9 @@ TEST_PROMPTS = [
         "user_text": "What is Amazon Nova Sonic? Answer briefly.",
     },
     {
-        "name": "English - Shokz Product",
+        "name": "English - Product",
         "system": (
-            "You are a Shokz product specialist. You help customers choose "
+            "You are a product specialist for bone conduction headphones. You help customers choose "
             "bone conduction headphones. Keep responses conversational and under 3 sentences."
         ),
         "user_text": "What are the benefits of bone conduction headphones for runners?",
